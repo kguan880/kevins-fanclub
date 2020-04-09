@@ -30,7 +30,7 @@ class Timer extends React.Component {
 
                     {this.state.count > 0 &&
                     <div className ="timer">
-                        <h2>{this.state.count} </h2>
+                        <h1>{this.state.count} </h1>
                     </div>
                     }
 
