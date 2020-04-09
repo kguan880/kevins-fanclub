@@ -1,0 +1,37 @@
+.timer-container{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Gloria Hallelujah';
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    border: solid black 1px;
+  }
+
+.timer {
+    display: inline-flex;
+    float: left;
+    width: 33.33%;
+    border: solid black 1px;
+    align-items: center;
+    justify-content: center;
+}
+
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+h2{
+    text-align: center;
+    font-family: 'Gloria Hallelujah'; font-size: 22px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Gloria Hallelujah'; font-size: 45px;
+}

@@ -5,7 +5,7 @@ import Timer from './Timer'
 const App = () => {
   return (
     <Router>
-      <h2>Richard Game</h2>
+      <h1>Richard Game</h1>
       <Timer/>
       {/* Routes go here */}
       <Route />
