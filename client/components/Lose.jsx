@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HideUntilLoaded } from 'react-animation'
 
 class Lose extends React.Component {
 
