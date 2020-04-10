@@ -39,7 +39,12 @@
     "react-animation": "^1.2.2",
     "react-animations": "^1.0.0",
     "react-router-dom": "^5.1.2",
-    "superagent": "^5.2.2"
+    "superagent": "^5.2.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -54,10 +59,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^25.2.7",
     "nodemon": "^2.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+
   }
 }
