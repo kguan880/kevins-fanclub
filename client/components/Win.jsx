@@ -11,7 +11,7 @@ class Win extends React.Component {
                     <h2>You got more than 5 points!</h2>
                 </div>
 
-                <div>
+                <div className="image">
                     <img src="../images/r-winking.gif" alt="Richard Happy"/>
                 </div>
 

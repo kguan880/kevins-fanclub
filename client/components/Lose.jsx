@@ -11,8 +11,14 @@ class Lose extends React.Component {
                     <h2>You got less than 5 points</h2>
                 </div>
 
-                <div>
-                    <img src="../images/r-eyes-closed.png" alt="sad richard"/>
+                <div className="image">
+                <HideUntilLoaded
+                        animationIn="bounceIn"
+                        imageToLoad="../images/r-eyes-closed.png"
+                        Spinner={() => <div>Loading...</div>}
+                    >
+                        <img src="../images/r-eyes-closed.png" alt="sad richard"/>
+                    </HideUntilLoaded>
                 </div>
 
                 <div>

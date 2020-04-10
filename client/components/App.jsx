@@ -8,6 +8,9 @@ import Timer from './Timer'
 
 class App extends React.Component {
   
+  state = {
+    count: 5
+  }
 
   // timerFunction = () =>{
   //   console.log("hello")
@@ -27,7 +30,7 @@ class App extends React.Component {
         <h1>Richard Game</h1>
         {/* Routes go here */}
         <Route exact path="/" component={Welcome} />
-        <Route path='/start' component={Timer}/>
+        <Route path='/start' component={Timer} />
         <Route path="/game" component={Game} />
         <Route path="/win" component={Win} />
         <Route path="/lose" component={Lose} />

@@ -84,7 +84,7 @@ class Game extends React.Component {
     render() {
         return (
             <>
-                <div>
+                <div className="image">
                     {/* Character will be Richard later. Placeholder now */}
                     <HideUntilLoaded
                         animationIn="bounceIn"
@@ -95,18 +95,19 @@ class Game extends React.Component {
                     </HideUntilLoaded>
                 </div>
 
-                <div>
+                <div className="container">
                     <p>Correct: {this.state.correctCount} Incorrect: {this.state.incorrectCount}</p>
                 </div>
 
-                <div>
+                <div className="container">
                     {/* Questions here */}
 
                     <p>{this.state.questions[this.state.questionCount].fact}</p>
 
                 </div>
 
-                <div>
+                {this.state.questionCount < 10 &&
+                <div className="start-btn-container">
                     {/* True/False input buttons */}
                     <button onClick={() => {
                         this.onClickHandler()
@@ -117,10 +118,11 @@ class Game extends React.Component {
                         this.onClickHandler()
                     }}>False</button>
                 </div>
-
-                {this.state.correctCount > 5 &&
+    }
+                <div className="start-btn-container">
+                {this.state.correctCount >= 5 &&
                     <Link to="/win">
-                        <button>Show Result</button>
+                        <button >Show Result</button>
                     </Link>
                 }
 
@@ -129,6 +131,8 @@ class Game extends React.Component {
                         <button>Show Result</button>
                     </Link>
                 }
+                </div>
+                
 
             </>
         )

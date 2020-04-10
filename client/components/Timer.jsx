@@ -2,16 +2,16 @@ import React, { useDebugValue } from 'react'
 import {Link} from 'react-router-dom'
 
 class Timer extends React.Component {
+    
     state = {
         count: 5
       }
 
     render() {
-        console.log(this.props)
         return (
             <>
                 <div className="timer-container">
-                    {this.props.count > 0 &&
+                    {this.state.count > 0 &&
                         <div className="column">
                             <h2>Facts</h2>
                             <ul>
@@ -25,13 +25,13 @@ class Timer extends React.Component {
                     }
 
 
-                    {this.props.count > 0 &&
+                    {this.state.count > 0 &&
                         <div className="timer">
-                            <h1>{this.props.count} </h1>
+                            <h1>{this.state.count} </h1>
                         </div>
                     }
 
-                    {this.props.count > 0 &&
+                    {this.state.count > 0 &&
                         <div className="column">
                             <h2>Facts pt 2</h2>
                             <ul>
@@ -43,12 +43,8 @@ class Timer extends React.Component {
                             </ul>
                         </div>
                     }
-                    {/* {
-                        this.props.count < 1 &&
-                        this.props.timerFunction()
-                    } */}
-
-                    {this.props.count < 1 &&
+                    
+                    {this.state.count < 1 &&
                         <div className="start-btn-container">
                             <Link to="/game">
                                 <button className="start-btn">Start</button>
@@ -63,7 +59,7 @@ class Timer extends React.Component {
     componentDidMount() {
         const interval = setInterval(() => {
                     this.setState({
-                        count: this.props.count - 1
+                        count: this.state.count - 1
                     })
                 }, 1000)
     }

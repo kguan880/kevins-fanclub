@@ -44,3 +44,8 @@ h1{
     font-family: 'Gloria Hallelujah'; font-size: 45px;
 }
 
+image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
