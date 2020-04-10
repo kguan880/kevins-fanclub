@@ -81,7 +81,7 @@ class Game extends React.Component{
             <>
             <div>
                 {/* Character will be Richard later. Placeholder now */}
-                <img src="https://www.kindpng.com/picc/m/125-1250612_rick-and-morty-morty-png-transparent-png.png" alt="Placeholder" style="height: 100px" />
+                <img src="https://www.kindpng.com/picc/m/125-1250612_rick-and-morty-morty-png-transparent-png.png" alt="Placeholder" />
             </div>
 
             <div>
