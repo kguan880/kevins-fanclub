@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HideUntilLoaded } from 'react-animation'
 
-class Game extends React.Component{
+class Game extends React.Component {
     state = {
         questionCount: 0,
         correctCount: 0,
@@ -56,12 +57,16 @@ class Game extends React.Component{
                 fact: "Read all other facts again",
                 isTrue: true,
                 isFalse: false,
+            },
+            {
+                fact: "",
+                isTrue: false,
+                isFalse: false
             }
         ],
     }
 
     onClickHandler = (event) => {
-        console.log("Count going up")
         this.setState({
             // else should link to win or lose
             questionCount: this.state.questionCount < 10 ? this.state.questionCount + 1 : this.state.questionCount
@@ -75,40 +80,56 @@ class Game extends React.Component{
             incorrectCount: questions[questionCount].isFalse ? incorrectCount + 1 : incorrectCount,
         })
     }
-    
+
     render() {
         return (
             <>
-            <div>
-                {/* Character will be Richard later. Placeholder now */}
-                <img src="https://www.kindpng.com/picc/m/125-1250612_rick-and-morty-morty-png-transparent-png.png" alt="Placeholder" />
-            </div>
+                <div>
+                    {/* Character will be Richard later. Placeholder now */}
+                    <HideUntilLoaded
+                        animationIn="bounceIn"
+                        imageToLoad="../images/r-eyes-open.png"
+                        Spinner={() => <div>Loading...</div>}
+                    >
+                        <img src="../images/r-eyes-open.png" alt="Richard Open Eyes" />
+                    </HideUntilLoaded>
+                </div>
 
-            <div>
-                <p>Correct: {this.state.correctCount} Incorrect: {this.state.incorrectCount}</p>
-            </div>
+                <div>
+                    <p>Correct: {this.state.correctCount} Incorrect: {this.state.incorrectCount}</p>
+                </div>
 
-            <div>
-                {/* Questions here */}
-                
-                <p>{this.state.questions[this.state.questionCount].fact}</p>
-                
-            </div>
+                <div>
+                    {/* Questions here */}
 
-            <div>
-                {/* True/False input buttons */}
-                <button name="true" value="true" 
-                onClick={() => {
-                    this.onClickHandler()
-                    this.correctClickHandler()
-                }}>True</button>
-                <button name="false" value="false" onClick={() => {
-                    this.correctClickHandler()
-                    this.onClickHandler()
-                }}>False</button>
-            </div>
-            {console.log("CC", this.state.correctCount)}
-            {console.log("IC", this.state.incorrectCount)}
+                    <p>{this.state.questions[this.state.questionCount].fact}</p>
+
+                </div>
+
+                <div>
+                    {/* True/False input buttons */}
+                    <button onClick={() => {
+                        this.onClickHandler()
+                        this.correctClickHandler()
+                    }}>True</button>
+                    <button onClick={() => {
+                        this.correctClickHandler()
+                        this.onClickHandler()
+                    }}>False</button>
+                </div>
+
+                {this.state.correctCount > 5 &&
+                    <Link to="/win">
+                        <button>Show Result</button>
+                    </Link>
+                }
+
+                {this.state.correctCount < 5 &&
+                    <Link to="/lose">
+                        <button>Show Result</button>
+                    </Link>
+                }
+
             </>
         )
     }

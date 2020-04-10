@@ -24,6 +24,16 @@
     clear: both;
   }
 
+  .container{
+    text-align: center;
+    font-family: 'Gloria Hallelujah';
+  }
+
+  .start-btn-container{
+    display:flex;
+    justify-content:center
+  }
+
 h2{
     text-align: center;
     font-family: 'Gloria Hallelujah'; font-size: 22px;
@@ -33,3 +43,4 @@ h1{
     text-align: center;
     font-family: 'Gloria Hallelujah'; font-size: 45px;
 }
+

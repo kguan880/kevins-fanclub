@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 class Lose extends React.Component {
 
@@ -11,9 +11,9 @@ class Lose extends React.Component {
                     <h2>You got less than 5 points</h2>
                 </div>
 
-                <image>
-
-                </image>
+                <div>
+                    <img src="../images/r-eyes-closed.png" alt="sad richard"/>
+                </div>
 
                 <div>
                     <p>
@@ -21,8 +21,9 @@ class Lose extends React.Component {
                     </p>
                     
                 </div>
-
+            <Link to="/game">
                 <button>Restart</button>
+            </Link>
           </>
       )
   }
